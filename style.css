@@ -1,0 +1,199 @@
+/* style.css - enhanced visibility for subtitle + footer */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3748;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px 15px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Header */
+.main {
+    background: linear-gradient(135deg, #d4dae6 0%, #07052f 100%);
+    color: white;
+    padding: 60px 40px 45px;
+    text-align: center;
+}
+
+.main h1 {
+    font-size: 2.8rem;
+    margin-bottom: 14px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+}
+
+/* Subtitle - darker, bolder, larger, full opacity */
+.main p.center:first-of-type {   /* targets the degree line specifically */
+    font-size: 1.32rem;
+    font-weight: 700;            /* very bold / dark */
+    opacity: 1;
+    letter-spacing: 0.4px;
+    margin: 8px 0 20px 0;
+}
+
+/* Contact links */
+.main p.center:last-of-type {
+    font-size: 1.1rem;
+}
+
+.main a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 14px;
+    transition: color 0.2s;
+}
+
+.main a:hover {
+    color: #a0d2ff;
+}
+
+/* Grid Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 40px;
+    padding: 40px;
+}
+
+.aboutMe,
+.Projects,
+.end {
+    grid-column: 1 / -1;
+}
+
+/* Sections */
+h2 {
+    color: #2c5282;
+    font-size: 1.45rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin: 12px 0 4px;
+}
+
+p, li {
+    color: #3f557c;
+    font-size: 1.03rem;
+}
+
+ul {
+    padding-left: 22px;
+    margin: 12px 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+ul li::before {
+    content: "•";
+    color: #4299e1;
+    position: absolute;
+    left: -18px;
+    font-size: 1.4rem;
+}
+
+/* Projects */
+.Projects p:last-child {
+    margin-top: 12px;
+    font-style: italic;
+    color: #4a5568;
+    background: #edf2f7;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Achievements */
+.Achievements ul {
+    columns: 2;
+    column-gap: 40px;
+}
+
+.Achievements li {
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+/* Footer - darker, bolder, larger, full opacity */
+.end {
+    background: #2c5282;
+    color: rgb(118, 8, 8);
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 40px;
+}
+
+.end p {
+    font-size: 1.22rem;          /* larger */
+    font-weight: 600;            /* bolder / darker */
+    opacity: 1;                  /* full visibility */
+    letter-spacing: 0.5px;
+    color:#ffffff;
+}
+.hello{
+    color: #030e21;
+    font-size: 1.03rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 30px;
+    }
+
+    .main {
+        padding: 50px 25px 35px;
+    }
+
+    .main h1 {
+        font-size: 2.4rem;
+    }
+
+    .main p.center:first-of-type {
+        font-size: 1.2rem;
+    }
+
+    .end p {
+        font-size: 1.15rem;
+    }
+
+    .Achievements ul {
+        columns: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .main a {
+        display: block;
+        margin: 10px 0;
+    }
+}
